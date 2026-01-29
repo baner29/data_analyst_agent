@@ -57,6 +57,9 @@ The main logic is in `agent.py`:
 1.  **Environment Variables:** Create a `.env` file in the project root and add your project ID:
     ```
     GOOGLE_CLOUD_PROJECT="your-gcp-project-id"
+    GOOGLE_GENAI_USE_VERTEXAI=TRUE
+    GOOGLE_CLOUD_REGION="your-desired-region"
+    GOOGLE_API_KEY="api-key"
     ```
 2.  **Agent Instructions (`agent.py`):** This is the most critical part to customize. Open `my_agent/agent.py` and modify the `instruction` string within the `LlmAgent` definition:
     *   Update the table names to match your BigQuery dataset and tables.
