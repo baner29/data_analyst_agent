@@ -40,6 +40,10 @@ async def handle_bigquery_tool_error(
         return {
             "error_message": "I was unable to run the query as it seems to be invalid. Please try rephrasing your request."
         }
+    if isinstance(root_exception, api_exceptions.Forbidden):
+        return {
+            "error_message": "I'm sorry, but I don't have the necessary permissions to access the database. Please check my configuration."
+        }
 
     # Check if the error is a timeout and provide a specific message
     if "Timed out" in str(error):
